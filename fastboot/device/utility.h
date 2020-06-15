@@ -65,7 +65,7 @@ bool LogicalPartitionExists(FastbootDevice* device, const std::string& name,
 bool OpenPartition(FastbootDevice* device, const std::string& name, PartitionHandle* handle);
 bool GetSlotNumber(const std::string& slot, android::hardware::boot::V1_0::Slot* number);
 std::vector<std::string> ListPartitions(FastbootDevice* device);
-bool GetDeviceLockStatus();
+constexpr bool GetDeviceLockStatus() { return false; }
 
 // Update all copies of metadata.
 bool UpdateAllPartitionMetadata(FastbootDevice* device, const std::string& super_name,
